@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
 
+
 inquirer
 .prompt([
  
@@ -22,57 +23,102 @@ inquirer
 },
 {
     type: "input",
-    name: "Description",
+    name: "description",
     message: "Description of the project",  
 },
+// {
+//     type: "checkbox",
+//     name: "table",
+//     message: "Table of Contents", 
+//     choices: [ 
+//         "Installation",​ 
+//         "Usage​", 
+//         "License​", 
+//         "Contributing​", 
+//         "Tests​", 
+//         "Questions",
+//     ],
+// },
 {
     type: "input",
-    name: "Table",
-    message: "Table of Contents", 
-},
-{
-    type: "input",
-    name: "Installation",
+    name: "installation",
     message: "Installations needed?", 
 },
 {
     type: "input",
-    name: "Usage",
+    name: "usage",
     message: "How to use the project?", 
 },
 {
     type: "list",
-    name: "License",
+    name: "license",
     message: "What license is used for this project?", 
     choices: ["BSA", "MIT","Boost", "IBM"],
 },
 {
     type: "input",
-    name: "Contribution",
+    name: "contribution",
     message: "Who contributed to the project?", 
 },
 {
     type: "input",
-    name: "Tests",
+    name: "tests",
     message: "Is test part of the project?", 
 },
 {
     type: "input",
-    name: "Questions",
-    message: "How do I resolve a problem that might occur?", 
-}
-]);
+    name: "questions",
+    message: "If you have any questions about the repo, please contact me directly at", 
+},
+])
+
+.then(function(data) {
+    console.log(data);
+    fs.writeFile("Hannasreadme.md", generateMarkdown(data), (err) => (err ? console.log (err) :
+    console.log("Your ReadMe file is completed."))
+);
+});
+
+function generateMarkdown(data) {
+    return `# ${data.title}
+    
+## Description
+${data.description}
+
+## Table
+${data.table}
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+## License
+${data.license}
+
+## Contribution
+${data.contribution}
+
+## Tests
+${data.tests}
+
+## Questions
+${data.questions} contact me at ${data.email} or fimd me at ${data.username}`;
+
+};
+
 
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(filReName, data) {}
+// function writeToFile(filReName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
 // Function call to initialize app
-init();
+// init();
 
 
