@@ -39,7 +39,7 @@ npm test
 ```
 
 ## Demo
-link here
+The link to this video will be put here when I'm done recording :)
 
 ## Questions
- If you have any questions about the repo, please contact me directly at hferris@dbq.edu or find me on github at hferris
+ If you have any questions about the repo, please contact me directly at hferris@dbq.edu or find me on github at https://github.com/hferris.
