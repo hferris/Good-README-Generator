@@ -1,21 +1,12 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require('fs');
+const renderLicenseBadge = require("./utils/generateMarkdown");
 
 
 inquirer
 .prompt([
- 
-{
-    type: "input",
-    name: "email",
-    message: "Your email address please.",
-},
-{
-    type: "input",
-    name: "username",
-    message: "Your github username please.",
-},  
+
 {
     type: "input",
     name: "title",
@@ -26,19 +17,12 @@ inquirer
     name: "description",
     message: "Description of the project",  
 },
-// {
-//     type: "checkbox",
-//     name: "table",
-//     message: "Table of Contents", 
-//     choices: [ 
-//         "Installation",​ 
-//         "Usage​", 
-//         "License​", 
-//         "Contributing​", 
-//         "Tests​", 
-//         "Questions",
-//     ],
-// },
+{
+    type: "checkbox",
+    name: "table",
+    message: "Table of Contents", 
+    choices: ["Installation", "Usage​", "License​", "Contribution", "Tests", "Demo", "Questions"],
+},
 {
     type: "input",
     name: "installation",
@@ -53,12 +37,12 @@ inquirer
     type: "list",
     name: "license",
     message: "What license is used for this project?", 
-    choices: ["BSA", "MIT","Boost", "IBM"],
+    choices: ["GNU", "MIT","Boost", "IBM"],
 },
 {
     type: "input",
     name: "contribution",
-    message: "Who contributed to the project?", 
+    message: "How to contribute to the project?", 
 },
 {
     type: "input",
@@ -67,8 +51,23 @@ inquirer
 },
 {
     type: "input",
+    name: "demo",
+    message: "Demonstration of project?", 
+},
+{
+    type: "input",
     name: "questions",
     message: "If you have any questions about the repo, please contact me directly at", 
+},
+{
+    type: "input",
+    name: "email",
+    message: "Your email address please.",
+},
+{
+    type: "input",
+    name: "username",
+    message: "Your github username please.",
 },
 ])
 
@@ -81,12 +80,27 @@ inquirer
 
 function generateMarkdown(data) {
     return `# ${data.title}
-    
+
+${renderLicenseBadge(data.license)}
+
 ## Description
 ${data.description}
 
-## Table
-${data.table}
+## Table of Content
+
+* [Installation](#installation) 
+
+* [Usage​](#usage)
+
+* [License​](#license)
+
+* [Contributing​](#contribution)
+
+* [Tests​](#tests)
+
+* [Demo](#demo)
+
+* [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -95,16 +109,21 @@ ${data.installation}
 ${data.usage}
 
 ## License
-${data.license}
+${renderLicenseBadge(data.license)}
 
 ## Contribution
 ${data.contribution}
 
 ## Tests
+\`\`\`
 ${data.tests}
+\`\`\`
+
+## Demo
+${data.demo}
 
 ## Questions
-${data.questions} contact me at ${data.email} or fimd me at ${data.username}`;
+${data.questions} If you have any questions about the repo, please contact me directly at ${data.email} or find me on github at ${data.username}`;
 
 };
 
