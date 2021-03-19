@@ -80,7 +80,7 @@ inquirer
 
 function generateMarkdown(data) {
     return `# ${data.title}
-
+    
 ${renderLicenseBadge(data.license)}
 
 ## Description
@@ -109,7 +109,7 @@ ${data.installation}
 ${data.usage}
 
 ## License
-${renderLicenseBadge(data.license)}
+${data.license}
 
 ## Contribution
 ${data.contribution}

@@ -1,4 +1,6 @@
 # MY ReadMe Generator
+    
+<img src="https://img.shields.io/badge/License-IPL%201.0-blue.svg"></img>
 
 ## Description
 A Node.js project application that uses user input inquirer to create a README.md for the users.
@@ -26,10 +28,10 @@ Please run command  "npm i -y" to install needed dependencies.
 When asked, please type Node index.js.
 
 ## License
-<img src="https://img.shields.io/badge/License-IPL%201.0-blue.svg"></img>
+IBM
 
 ## Contribution
-Don't hesitate to submit any code updates to satisfy acceptance criteria.
+Please don't hesitate to submit any code updates to satisfy acceptance criteria.
 
 ## Tests
 ```
@@ -37,7 +39,7 @@ npm test
 ```
 
 ## Demo
-video link
+link here
 
 ## Questions
- If you have any questions about the repo, please contact me directly at hferris@dbq.edu or connect with me on github with the username of hferris.
+ If you have any questions about the repo, please contact me directly at hferris@dbq.edu or find me on github at hferris
