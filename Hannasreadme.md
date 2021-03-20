@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/badge/License-IPL%201.0-blue.svg"></img>
 
 ## Description
-A Node.js project application that uses user input inquirer to create a README.md for the users.
+ Node.js project application that uses user input inquirer to create a README.md for the users.
 
 ## Table of Content
 
@@ -39,7 +39,7 @@ npm test
 ```
 
 ## Demo
-The link to this video will be put here when I'm done recording :)
+https://www.youtube.com/watch?v=ei7H0VBqTYM 
 
 ## Questions
  If you have any questions about the repo, please contact me directly at hferris@dbq.edu or find me on github at https://github.com/hferris.
